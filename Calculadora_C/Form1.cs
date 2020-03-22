@@ -39,6 +39,7 @@ namespace Calculadora_C
             
         }
 
+        //Botones que almacenan las operaciones
         private void button11_Click(object sender, EventArgs e)
         {
             Button boton = (Button)sender;
@@ -47,6 +48,7 @@ namespace Calculadora_C
             label1.Text = "0";
         }
 
+        //Método que realiza las diferentes operaciones y muestra el resultado
         private void button10_Click(object sender, EventArgs e)
         {
             double operando2 = Convert.ToDouble(label1.Text);
