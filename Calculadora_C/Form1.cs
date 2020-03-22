@@ -14,11 +14,11 @@ namespace Calculadora_C
     {
         //Declaro las variables de instancia
         //operando 1
-        double operando1 = 0;
+        double operando1 = 0.0;
 
         //En el string operacion guardo la operación que ha sido pulsada
         String operacion = "";
-
+        
 
         public Form1()
         {
@@ -32,7 +32,8 @@ namespace Calculadora_C
             {
                 label1.Text = boton.Text;
             }
-            else { 
+            else
+            {
                 label1.Text = label1.Text + boton.Text;
             }
             
@@ -50,14 +51,45 @@ namespace Calculadora_C
         {
             double operando2 = Convert.ToDouble(label1.Text);
             double resultado = 0;
+
             if (operacion == "+")
             {
                 resultado = operando1 + operando2;
             }
-            else if (operacion == "-") {
+            else if (operacion == "-")
+            {
                 resultado = operando1 - operando2;
             }
+            else if (operacion == "/")
+            {
+                resultado = operando1 / operando2;
+            }
+            else if (operacion == "*")
+            {
+                resultado = operando1 * operando2;
+            }
+            else if (operacion == "^")
+            {
+                resultado = Math.Pow(operando1, operando2);
+            }
+            else if (operacion == "√")
+            {
+                resultado = Math.Sqrt(operando1);
+            }
+            else if (operacion == "%")
+            {
+                resultado = operando1 / 100 * operando2;
+            }
+            else if (operacion == "AC")
+            {
+                resultado = 0;
+                operando1 = 0;
+                operando2 = 0;
+            }
+            
             label1.Text = Convert.ToString(resultado);
+
         }
+
     }
 }
